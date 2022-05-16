@@ -1,1 +1,1 @@
-console.log("Wazzup world");
+console.log('Wazzup world');

@@ -1,4 +1,10 @@
 {
   "editor.tabSize": 2,
-  "editor.insertSpaces": true
+  "editor.insertSpaces": true,
+  "[typescript]": {
+    "editor.rulers": [100]
+  },
+  "[typescriptreact]": {
+    "editor.rulers": [100]
+  }
 }

@@ -1,0 +1,8 @@
+{
+  "name": "calico",
+  "version": "0.0.1",
+  "repository": "git@github.com:Krystian19/calico.git",
+  "author": "Jan Guzman <janfrancisco19@gmail.com>",
+  "license": "MIT",
+  "private": true
+}

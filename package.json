@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "dependencies": {
+    "@calico/server": "0.0.1"
+  },
   "devDependencies": {
     "@types/node": "^16.3.3",
     "typescript": "^4.3.5"

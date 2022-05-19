@@ -1,15 +1,57 @@
-import CoinGecko from 'coingecko-api';
+import { CoinGeckoClient } from 'coingecko-api-v3';
+
+const SUPPORTED_CURRENCIES = ['bitcoin', 'ethereum', 'monero', 'zcash'];
+const SUPPORTED_FIAT_CURRENCIES = ['usd', 'eur'];
 
 class GeckoClient {
-  client: CoinGecko;
+  client: CoinGeckoClient;
 
   constructor() {
-    this.client = new CoinGecko();
+    this.client = new CoinGeckoClient({
+      autoRetry: true,
+    });
   }
 
   async ping(): Promise<boolean> {
-    return (await this.client.ping()).success;
+    return (await this.client.ping()).gecko_says === '(V3) To the Moon!';
+  }
+
+  async getCoins(): Promise<BasicCoinConvertion[]> {
+    const res = await this.client.simplePrice({
+      ids: SUPPORTED_CURRENCIES.join(','),
+      vs_currencies: SUPPORTED_FIAT_CURRENCIES.join(','),
+    });
+
+    const coins: BasicCoinConvertion[] = [];
+    Object.keys(res).forEach((ky) => {
+      const conversions = Object.keys(res[ky]);
+      const fiatConversions: BasicFiatConversion[] = [];
+
+      conversions.forEach((cv) => {
+        fiatConversions.push({
+          fiat: cv,
+          amount: res[ky][cv],
+        });
+      });
+
+      coins.push({
+        id: ky,
+        fiatConversions,
+      });
+    });
+
+    return coins;
   }
 }
+
+type BasicCoinConvertion = {
+  id: string;
+  fiatConversions: BasicFiatConversion[];
+};
+
+type BasicFiatConversion = {
+  fiat: string;
+  amount: number;
+};
 
 export default GeckoClient;

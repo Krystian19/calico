@@ -8,8 +8,5 @@
   "dependencies": {
     "apollo-server": "^3.7.0",
     "graphql": "^16.5.0"
-  },
-  "devDependencies": {
-    "ts-node": "^10.7.0"
   }
 }

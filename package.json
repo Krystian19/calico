@@ -8,7 +8,8 @@
     "lint": "eslint ./packages/** --ext .ts --quiet --cache --cache-location \".eslintcache/\""
   },
   "dependencies": {
-    "@calico/server": "0.0.1"
+    "@calico/server": "0.0.1",
+    "@calico/nexus": "0.0.1"
   },
   "devDependencies": {
     "@types/node": "^16.3.3",

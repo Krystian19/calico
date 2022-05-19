@@ -13,6 +13,7 @@
     "project": ["./tsconfig.json"]
   },
   "rules": {
+    "indent": 0,
     "no-console": 0,
     "no-bitwise": "error",
     "no-underscore-dangle": "error",
@@ -21,6 +22,7 @@
     "implicit-arrow-linebreak": 0,
     "@typescript-eslint/camelcase": 0,
     "max-len": ["error", { "code": 100 }],
+    "@typescript-eslint/indent": 0,
     "@typescript-eslint/no-this-alias": 0,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-empty-interface": 0,

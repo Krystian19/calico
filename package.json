@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "lint": "eslint ./packages/** --ext .ts --quiet --cache --cache-location \".eslintcache/\""
   },

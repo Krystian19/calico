@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@calico/server": "0.0.1",
-    "@calico/nexus": "0.0.1"
+    "@calico/nexus": "0.0.1",
+    "mobile": "0.0.1"
   },
   "devDependencies": {
     "@types/node": "^16.3.3",

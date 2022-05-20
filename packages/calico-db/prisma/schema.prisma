@@ -10,3 +10,9 @@ datasource db {
   url      = "postgresql://postgres:pass@calico.postgres:5432/calico?schema=public"
   // url      = env("DATABASE_URL")
 }
+
+model Currency {
+  id   Int    @id @default(autoincrement())
+  name String
+  code String @unique
+}

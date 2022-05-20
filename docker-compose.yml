@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  calico.postgres:
+    container_name: calico_postgres
+    networks:
+      - calico_net
+    image: postgres:14.1-alpine3.14
+    volumes:
+      - ./_cache/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 'pass'
+      POSTGRES_DB: 'calico'
+      PGDATA: '/var/lib/postgresql/data'
+    ports:
+      - 5432:5432
+
+networks:
+  calico_net:
+    name: calico_net

@@ -1,11 +1,14 @@
 {
-  "name": "@calico/nexus",
+  "name": "@calico/db",
   "version": "0.0.1",
   "license": "UNLICENSED",
   "scripts": {
     "start": "ts-node src/"
   },
   "dependencies": {
-    "coingecko-api-v3": "^0.0.13"
+    "@prisma/client": "^3.14.0"
+  },
+  "devDependencies": {
+    "prisma": "^3.14.0"
   }
 }

@@ -1,5 +1,1 @@
-// import { PrismaClient } from '@prisma/client';
-
-// const prisma = new PrismaClient();
-
-console.log('db module');
+export * from './providers';

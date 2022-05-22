@@ -4,6 +4,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "engines": {
+    "node": "^16"
+  },
   "scripts": {
     "build": "lerna run build --stream",
     "generate": "lerna run generate --stream",

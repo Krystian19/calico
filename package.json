@@ -5,6 +5,9 @@
     "packages/*"
   ],
   "scripts": {
+    "synchronizer-start": "(cd packages/calico-synchronizer; yarn start)",
+    "generate": "(cd packages/calico-db; yarn generate)",
+    "migrate": "(cd packages/calico-db; yarn migrate)",
     "lint": "eslint ./packages/** --ext .ts --quiet --cache --cache-location \".eslintcache/\""
   },
   "dependencies": {

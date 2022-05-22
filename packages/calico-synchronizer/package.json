@@ -4,6 +4,7 @@
   "license": "UNLICENSED",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node-dev --respawn --deps ./src"
+    "start": "ts-node-dev --respawn --deps ./src",
+    "build": "tsc --build tsconfig.json"
   }
 }

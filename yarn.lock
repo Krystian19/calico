@@ -1555,6 +1555,11 @@
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
   integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
 
+"@types/emscripten@^1.39.6":
+  version "1.39.6"
+  resolved "https://registry.yarnpkg.com/@types/emscripten/-/emscripten-1.39.6.tgz#698b90fe60d44acf93c31064218fbea93fbfd85a"
+  integrity sha512-H90aoynNhhkQP6DRweEjJp5vfUVdIj7tdPLsu7pq89vODD/lcugKfZOsfgwpvM6XUewEp2N5dCg1Uf3Qe55Dcg==
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -1904,6 +1909,34 @@
   dependencies:
     "@typescript-eslint/types" "5.25.0"
     eslint-visitor-keys "^3.3.0"
+
+"@yarnpkg/fslib@^3.0.0-rc.6":
+  version "3.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/fslib/-/fslib-3.0.0-rc.6.tgz#485cd97117702349a7969900ca0c764e7a08257c"
+  integrity sha512-VDLBREUEHrIycONRHh/Ap4cOHcRKJ9IbSmMYrm+3y5Z5gxu0KXojr8E+QoMAr7nveohp9y7CNdEVPbmH7g8K/Q==
+  dependencies:
+    "@yarnpkg/libzip" "^3.0.0-rc.6"
+    tslib "^1.13.0"
+
+"@yarnpkg/libzip@^3.0.0-rc.6":
+  version "3.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/libzip/-/libzip-3.0.0-rc.6.tgz#e1d401cc498157da3111a6b65222a7114d82936d"
+  integrity sha512-3KH7WyNyYF5SrvbdG6URI5erL5hWzbMQZnqBVo/T73dXw91Qxlo37Ktg/YpGH/IlQeuzW6ru88so+E9qWHUA/w==
+  dependencies:
+    "@types/emscripten" "^1.39.6"
+    tslib "^1.13.0"
+
+"@yarnpkg/plugin-workspace-tools@^4.0.0-rc.6":
+  version "4.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/plugin-workspace-tools/-/plugin-workspace-tools-4.0.0-rc.6.tgz#07fef68d63b61a9f5e218664d1743792ca1fd42c"
+  integrity sha512-FIxWwqASvWo/37WNP9/NK49z/pSoC0DEUMHdWSbuXoPLhsYcvMM/Huff9XG1m3uRCJtoLRERyZqGeLuIhT8oKA==
+  dependencies:
+    "@yarnpkg/fslib" "^3.0.0-rc.6"
+    clipanion "^3.2.0-rc.10"
+    micromatch "^4.0.2"
+    p-limit "^2.2.0"
+    tslib "^1.13.0"
+    typanion "^3.3.0"
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.6"
@@ -2805,6 +2838,13 @@ cli-spinners@^2.0.0, cli-spinners@^2.5.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/cli-spinners/-/cli-spinners-2.6.1.tgz#adc954ebe281c37a6319bfa401e6dd2488ffb70d"
   integrity sha512-x/5fWmGMnbKQAaNwN+UZlV79qBLM9JFnJuJ03gIi5whrob0xV0ofNVHy9DhwGdsMJQc2OKv0oGmLzvaqvAVv+g==
+
+clipanion@^3.2.0-rc.10:
+  version "3.2.0-rc.11"
+  resolved "https://registry.yarnpkg.com/clipanion/-/clipanion-3.2.0-rc.11.tgz#765661c9aeda8ecc14035a61a4b19b361f9a5400"
+  integrity sha512-fugY+N5uPop31VDYhjTc31DwPjCCLx6kmvdlFTf8fztpOxwplopiZr1XSHSA2qNmfpcXlJZKJsXMkxvXmdzK7g==
+  dependencies:
+    typanion "^3.8.0"
 
 cliui@^6.0.0:
   version "6.0.0"
@@ -7865,7 +7905,7 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@^1.8.1:
+tslib@^1.13.0, tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
@@ -7881,6 +7921,11 @@ tsutils@^3.17.1, tsutils@^3.21.0:
   integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==
   dependencies:
     tslib "^1.8.1"
+
+typanion@^3.3.0, typanion@^3.8.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/typanion/-/typanion-3.9.0.tgz#071a31a0f81c3c31226e190d0a6513ff1c8ae1a3"
+  integrity sha512-7yPk67IIquhKQcUXOBM27vDuGmZf6oJbEmzgVfDniHCkT6+z4JnKY85nKqbstoec8Kp7hD06TP3Kc98ij43PIg==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"

@@ -4,15 +4,14 @@
   "workspaces": [
     "packages/*"
   ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "scripts": {
     "lint": "eslint ./packages/** --ext .ts --quiet --cache --cache-location \".eslintcache/\""
   },
   "dependencies": {
-    "@calico/server": "0.0.1",
+    "@calico/db": "0.0.1",
     "@calico/nexus": "0.0.1",
+    "@calico/server": "0.0.1",
+    "@calico/synchronizer": "0.0.1",
     "mobile": "0.0.1"
   },
   "devDependencies": {
@@ -29,7 +28,7 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "prettier": "^2.2.1",
     "prettier-eslint": "^15.0.0",
-    "typescript": "^4.3.5",
-    "ts-node": "^10.7.0"
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
   }
 }

@@ -19,6 +19,7 @@
     "no-underscore-dangle": "error",
     "class-methods-use-this": 0,
     "lines-between-class-members": 0,
+    "import/no-extraneous-dependencies": 0,
     "implicit-arrow-linebreak": 0,
     "@typescript-eslint/camelcase": 0,
     "max-len": ["error", { "code": 100 }],

@@ -7,10 +7,9 @@
   "scripts": {
     "build": "lerna run build --stream",
     "generate": "lerna run generate --stream",
-    "synchronizer-build": "(cd packages/calico-synchronizer; yarn build)",
-    "synchronizer-start": "(cd packages/calico-synchronizer; yarn start)",
-    "migrate": "(cd packages/calico-db; yarn migrate)",
-    "lint": "eslint ./packages/** --ext .ts --ext .tsx --quiet --cache --cache-location \".eslintcache/\""
+    "migrate": "lerna run migrate --stream",
+    "lint": "eslint ./packages/** --ext .ts --ext .tsx --quiet --cache --cache-location \".eslintcache/\"",
+    "synchronizer-start": "(cd packages/calico-synchronizer; yarn start)"
   },
   "dependencies": {
     "@calico/db": "0.0.1",

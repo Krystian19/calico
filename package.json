@@ -6,9 +6,9 @@
   ],
   "scripts": {
     "build": "lerna run build --stream",
+    "generate": "lerna run generate --stream",
     "synchronizer-build": "(cd packages/calico-synchronizer; yarn build)",
     "synchronizer-start": "(cd packages/calico-synchronizer; yarn start)",
-    "generate": "(cd packages/calico-db; yarn generate)",
     "migrate": "(cd packages/calico-db; yarn migrate)",
     "lint": "eslint ./packages/** --ext .ts --ext .tsx --quiet --cache --cache-location \".eslintcache/\""
   },

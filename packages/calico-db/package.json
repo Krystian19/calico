@@ -4,7 +4,8 @@
   "license": "UNLICENSED",
   "main": "src/index.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "generate": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^3.14.0"

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "tsc --build tsconfig.json"
+    "build": "tsc"
   },
   "dependencies": {
     "apollo-server": "^3.7.0",

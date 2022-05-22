@@ -12,7 +12,8 @@ datasource db {
 }
 
 model Currency {
-  id   Int    @id @default(autoincrement())
-  name String
-  code String @unique
+  id          Int    @id @default(autoincrement())
+  name        String
+  code        String @unique
+  conversions Json[]
 }

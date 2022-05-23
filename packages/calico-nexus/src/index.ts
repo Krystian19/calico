@@ -1,1 +1,1 @@
-export * from './clients/coin_gecko';
+export * as CoinGecko from './clients/coin_gecko';

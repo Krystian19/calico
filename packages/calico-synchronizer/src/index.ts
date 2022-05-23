@@ -1,11 +1,6 @@
-import db from '@calico/db';
+import Synchronizer from './synchronizer';
 
-(async (): Promise<void> => {
-  const res = await db.Currency.findFirst({
-    where: {
-      name: 'yyyzzz',
-    },
-  });
-
-  console.log(res);
-})();
+new Synchronizer().run().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

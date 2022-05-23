@@ -3,7 +3,7 @@ import { CoinGeckoClient } from 'coingecko-api-v3';
 const SUPPORTED_CURRENCIES = ['bitcoin', 'ethereum', 'monero', 'zcash'];
 const SUPPORTED_FIAT_CURRENCIES = ['usd', 'eur'];
 
-class GeckoClient {
+export default class GeckoClient {
   client: CoinGeckoClient;
 
   constructor() {
@@ -53,5 +53,3 @@ type BasicFiatConversion = {
   fiat: string;
   amount: number;
 };
-
-export default GeckoClient;

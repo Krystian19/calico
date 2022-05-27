@@ -44,12 +44,12 @@ export default class GeckoClient {
   }
 }
 
-type BasicCoinConvertion = {
+export type BasicCoinConvertion = {
   id: string;
   fiatConversions: BasicFiatConversion[];
 };
 
-type BasicFiatConversion = {
+export type BasicFiatConversion = {
   fiat: string;
   amount: number;
 };

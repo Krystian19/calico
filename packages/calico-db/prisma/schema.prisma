@@ -2,7 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
 }
 
 datasource db {
@@ -12,8 +13,16 @@ datasource db {
 }
 
 model Currency {
-  id          Int    @id @default(autoincrement())
-  name        String
-  code        String @unique
-  conversions Json[]
+  id                  Int                  @id @default(autoincrement())
+  name                String
+  code                String               @unique
+  currencyConversions CurrencyConversion[]
+}
+
+model CurrencyConversion {
+  id         Int      @id @default(autoincrement())
+  fiat       String
+  amount     Int
+  currency   Currency @relation(fields: [currencyId], references: [id])
+  currencyId Int
 }

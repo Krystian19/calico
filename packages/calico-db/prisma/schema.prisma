@@ -22,7 +22,7 @@ model Currency {
 model CurrencyConversion {
   id         Int      @id @default(autoincrement())
   fiat       String
-  amount     Int
+  amount     Float
   currency   Currency @relation(fields: [currencyId], references: [id])
   currencyId Int
 }

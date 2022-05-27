@@ -26,7 +26,7 @@ export const provider = {
 
         await prisma.currencyConversion.deleteMany({
           where: {
-            currencyId: 1,
+            currencyId: currentCurrency.id,
           },
         });
 

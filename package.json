@@ -12,6 +12,7 @@
     "generate": "lerna run generate --stream",
     "migrate": "lerna run migrate --stream",
     "lint": "eslint ./packages/** --ext .ts --ext .tsx --quiet --cache --cache-location \".eslintcache/\"",
+    "server-start": "(cd packages/calico-server; yarn start)",
     "synchronizer-start": "(cd packages/calico-synchronizer; yarn start)"
   },
   "dependencies": {

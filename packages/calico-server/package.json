@@ -2,7 +2,9 @@
   "name": "@calico/server",
   "version": "0.0.1",
   "license": "UNLICENSED",
+  "main": "src",
   "scripts": {
+    "start": "ts-node-dev --respawn --deps ./src",
     "build": "tsc"
   },
   "dependencies": {

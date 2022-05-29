@@ -2,7 +2,7 @@
   "name": "@calico/synchronizer",
   "version": "0.0.1",
   "license": "UNLICENSED",
-  "main": "src/index.ts",
+  "main": "src",
   "scripts": {
     "start": "ts-node-dev --respawn --deps ./src",
     "build": "tsc"

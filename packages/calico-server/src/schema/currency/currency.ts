@@ -1,17 +1,6 @@
+import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
+import { loadSchemaSync } from '@graphql-tools/load';
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { gql } from 'apollo-server';
-
-const typeDefs = gql`
-  type Currency {
-    id: ID!
-    name: String
-    code: String
-  }
-
-  type Query {
-    getCurrencies: [Currency!]!
-  }
-`;
 
 const resolvers = {
   Query: {
@@ -28,6 +17,8 @@ const resolvers = {
 };
 
 export default makeExecutableSchema({
-  typeDefs,
+  typeDefs: loadSchemaSync('./src/schema/currency/currency.gql', {
+    loaders: [new GraphQLFileLoader()],
+  }),
   resolvers,
 });

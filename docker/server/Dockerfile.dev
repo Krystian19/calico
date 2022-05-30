@@ -1,0 +1,13 @@
+FROM node:16.15-alpine3.14
+
+RUN apk add openssl
+RUN apk add bash
+
+# Wait-for-it alpine compatible version
+ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /opt/bin/
+RUN chmod +x /opt/bin/wait-for-it.sh
+
+WORKDIR /app
+COPY . /app
+
+CMD ./packages/calico-server/scripts/setup.sh

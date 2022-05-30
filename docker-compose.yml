@@ -15,6 +15,17 @@ services:
     ports:
       - 5432:5432
 
+  calico.server:
+    container_name: calico_server
+    networks:
+      - calico_net
+    build:
+      context: .
+      dockerfile: ./docker/server/Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/node_modules/
+
   calico.synchronizer:
     container_name: calico_synchronizer
     networks:

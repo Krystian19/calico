@@ -8,7 +8,9 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@graphql-tools/stitch": "^8.6.12",
     "apollo-server": "^3.7.0",
-    "graphql": "^16.5.0"
+    "graphql": "^16.5.0",
+    "graphql-tools": "^8.2.11"
   }
 }

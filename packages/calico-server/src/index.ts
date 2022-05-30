@@ -1,22 +1,8 @@
-import { ApolloServer, gql } from 'apollo-server';
-
-const typeDefs = gql`
-  type Query {
-    "A simple type for getting started!"
-    hello: String
-  }
-`;
-
-// A map of functions which return data for the schema.
-const resolvers = {
-  Query: {
-    hello: (): string => 'world',
-  },
-};
+import schema from '@calico/server/src/schema';
+import { ApolloServer } from 'apollo-server';
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema,
 });
 
 server.listen().then(({ url }) => {

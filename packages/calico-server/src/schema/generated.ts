@@ -16,7 +16,7 @@ export type Scalars = {
 export type Currency = {
   __typename?: 'Currency';
   code?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
+  id: Scalars['Int'];
   name?: Maybe<Scalars['String']>;
 };
 
@@ -93,7 +93,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = ResolversObject<{
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Currency: ResolverTypeWrapper<Currency>;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
 }>;
@@ -102,14 +102,14 @@ export type ResolversTypes = ResolversObject<{
 export type ResolversParentTypes = ResolversObject<{
   Boolean: Scalars['Boolean'];
   Currency: Currency;
-  ID: Scalars['ID'];
+  Int: Scalars['Int'];
   Query: {};
   String: Scalars['String'];
 }>;
 
 export type CurrencyResolvers<ContextType = any, ParentType extends ResolversParentTypes['Currency'] = ResolversParentTypes['Currency']> = ResolversObject<{
   code?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;

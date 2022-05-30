@@ -1,5 +1,5 @@
 type Currency {
-  id: ID!
+  id: Int!
   name: String
   code: String
 }

@@ -1,10 +1,11 @@
+import { Currency, Resolvers } from '@calico/server/src/schema/generated';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
 import { loadSchemaSync } from '@graphql-tools/load';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 
-const resolvers = {
+const resolvers: Resolvers = {
   Query: {
-    getCurrencies: (): { id: number; name: string; code: string }[] => {
+    getCurrencies: async (): Promise<Currency[]> => {
       return [
         {
           id: 1,

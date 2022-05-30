@@ -1,7 +1,6 @@
+import { createClient } from '@calico/db/src/client';
 import { CoinGecko } from '@calico/nexus';
 import { Prisma } from '@prisma/client';
-
-import { createClient } from '../client';
 
 const client = createClient();
 

@@ -1,4 +1,4 @@
-import { createClient } from '../client';
+import { createClient } from '@calico/db/src/client';
 
 const client = createClient();
 

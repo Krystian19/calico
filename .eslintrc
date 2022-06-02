@@ -17,6 +17,7 @@
   },
   "rules": {
     "indent": 0,
+    "import/extensions": 0,
     "no-console": 0,
     "no-bitwise": "error",
     "no-underscore-dangle": "error",
@@ -31,7 +32,7 @@
     "@typescript-eslint/no-this-alias": 0,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-empty-interface": 0,
-    "@typescript-eslint/no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-use-before-define": 0,
     "@typescript-eslint/explicit-function-return-type": ["error"],
     "simple-import-sort/imports": "error",

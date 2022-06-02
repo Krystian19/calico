@@ -1,0 +1,15 @@
+{
+  "name": "@calico/mobile-graphql",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "scripts": {
+    "gqlgen": "graphql-codegen --config codegen.yml"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/named-operations-object": "^2.2.1",
+    "@graphql-codegen/typescript": "^2.4.11",
+    "@graphql-codegen/typescript-operations": "^2.4.0",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.14"
+  }
+}

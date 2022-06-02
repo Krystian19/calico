@@ -8,12 +8,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // Views
-import CurrencyListView from './views/CurrencyListVie.tsxw';
-import SettingsView from './views/SettingsView.tsx';
+import CurrencyListView from './views/CurrencyListView';
+import SettingsView from './views/SettingsView';
 
 // View Names
-const currencyListView = 'currencyListView';
-const settingsView = 'settingsView';
+const currencyListView = 'Home';
+const settingsView = 'Settings';
 
 const Tab = createBottomTabNavigator();
 

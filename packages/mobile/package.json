@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "./src/index.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "start": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start",
+    "android": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --android",
+    "ios": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --ios",
+    "web": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --web",
+    "eject": "EXPO_NO_TYPESCRIPT_SETUP=1 expo eject"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.3.1",

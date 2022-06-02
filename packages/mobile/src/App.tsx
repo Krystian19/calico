@@ -9,35 +9,40 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import CurrencyListView from './views/CurrencyListView';
 import SettingsView from './views/SettingsView';
 
-// View Names
-const currencyListView = 'Home';
-const settingsView = 'Settings';
-
 const Tab = createBottomTabNavigator();
 
 export default function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName={currencyListView}
+        initialRouteName={HOME}
         screenOptions={({ route }): BottomTabNavigationOptions => ({
-          tabBarIcon: ({ focused, color, size }): JSX.Element => {
-            let iconName = 'home';
-            const routeName = route.name;
-
-            if (routeName == currencyListView) {
-              iconName = focused ? 'home' : 'home-outline';
-            } else if (routeName == settingsView) {
-              iconName = focused ? 'settings' : 'settings-outline';
-            }
-
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
+          tabBarIcon: ({ focused, color, size }): JSX.Element => (
+            <Ionicons
+              name={getNavbarIcon(route.name, focused)}
+              size={size}
+              color={color}
+            />
+          ),
         })}
       >
-        <Tab.Screen name={currencyListView} component={CurrencyListView} />
-        <Tab.Screen name={settingsView} component={SettingsView} />
+        <Tab.Screen name={HOME} component={CurrencyListView} />
+        <Tab.Screen name={SETTINGS} component={SettingsView} />
       </Tab.Navigator>
     </NavigationContainer>
   );
+}
+
+// Views
+const HOME = 'Home';
+const SETTINGS = 'Settings';
+
+function getNavbarIcon(routeName: string, focused: boolean): string {
+  switch (routeName) {
+    case SETTINGS:
+      return focused ? 'settings' : 'settings-outline';
+    case HOME:
+    default:
+      return focused ? 'home' : 'home-outline';
+  }
 }

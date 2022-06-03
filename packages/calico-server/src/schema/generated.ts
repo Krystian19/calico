@@ -15,9 +15,9 @@ export type Scalars = {
 
 export type Currency = {
   __typename?: 'Currency';
-  code?: Maybe<Scalars['String']>;
+  code: Scalars['String'];
   id: Scalars['Int'];
-  name?: Maybe<Scalars['String']>;
+  name: Scalars['String'];
 };
 
 export type Query = {
@@ -108,9 +108,9 @@ export type ResolversParentTypes = ResolversObject<{
 }>;
 
 export type CurrencyResolvers<ContextType = any, ParentType extends ResolversParentTypes['Currency'] = ResolversParentTypes['Currency']> = ResolversObject<{
-  code?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  code?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 

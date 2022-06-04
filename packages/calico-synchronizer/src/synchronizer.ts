@@ -37,7 +37,7 @@ export default class Synchronizer {
     await db.Currency.refreshCurrencies(conversions);
   }
 
-  sleep(ms: number): Promise<void> {
+  private sleep(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }

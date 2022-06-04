@@ -1,7 +1,8 @@
 import db from '@calico/db';
 import { CoinGecko } from '@calico/nexus';
 
-const TICK = 20000; // 20 seconds
+const SECOND = 1000;
+const TICK = 20 * SECOND;
 
 export default class Synchronizer {
   nexusClient: CoinGecko.default;
@@ -16,18 +17,24 @@ export default class Synchronizer {
 
   async syncCurrencyConversionsForever(): Promise<void> {
     while (true) {
-      const conversions = await this.nexusClient.getCoins();
-      console.log(
-        '===================================================================',
-      );
-      console.log(conversions);
-
-      // Refresh current conversion on the DB
-      await db.Currency.refreshCurrencies(conversions);
+      await this.refreshCoinConversionInfo();
 
       // Sleep x amount of time before checking again
       await this.sleep(TICK);
     }
+  }
+
+  async refreshCoinConversionInfo(): Promise<void> {
+    // Fetch coin latest coin conversion info
+    const conversions = await this.nexusClient.getCoins();
+
+    console.log(
+      '===================================================================',
+    );
+    console.log(conversions);
+
+    // Refresh current conversion on DB
+    await db.Currency.refreshCurrencies(conversions);
   }
 
   sleep(ms: number): Promise<void> {

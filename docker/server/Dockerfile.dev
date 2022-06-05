@@ -10,4 +10,6 @@ RUN chmod +x /opt/bin/wait-for-it.sh
 WORKDIR /app
 COPY . /app
 
+EXPOSE 4000
+
 CMD ./packages/calico-server/scripts/setup.sh

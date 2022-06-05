@@ -37,6 +37,20 @@ services:
       - .:/app
       - /app/node_modules/
 
+  calico.mobile:
+    container_name: calico_mobile
+    networks:
+      - calico_net
+    build:
+      context: .
+      dockerfile: ./docker/mobile/Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/node_modules/
+    ports:
+      - 19000:19000
+      - 19006:19006
+
 networks:
   calico_net:
     name: calico_net

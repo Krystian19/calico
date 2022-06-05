@@ -25,6 +25,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules/
+    platform: "linux/amd64"
 
   calico.synchronizer:
     container_name: calico_synchronizer
@@ -36,6 +37,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules/
+    platform: "linux/amd64"
 
   calico.mobile:
     container_name: calico_mobile

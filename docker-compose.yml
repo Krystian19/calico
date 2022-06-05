@@ -6,8 +6,8 @@ services:
     networks:
       - calico_net
     image: postgres:14.1-alpine3.14
-    volumes:
-      - ./_cache/postgres:/var/lib/postgresql/data
+    # volumes:
+    #   - ./_cache/postgres:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: 'pass'
       POSTGRES_DB: 'calico'
@@ -25,6 +25,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules/
+    ports:
+      - 4000:4000
     platform: "linux/amd64"
 
   calico.synchronizer:

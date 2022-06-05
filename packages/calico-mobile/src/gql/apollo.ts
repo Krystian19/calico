@@ -4,7 +4,7 @@ import {
   InMemoryCache,
   NormalizedCacheObject,
 } from '@apollo/client';
-import { MOBILE_APP_SERVER_URL } from '@env';
+import { MOBILE_APP_SERVER_URL } from 'react-native-dotenv';
 
 export function NewApolloClient(): ApolloClient<NormalizedCacheObject> {
   const link = new HttpLink({

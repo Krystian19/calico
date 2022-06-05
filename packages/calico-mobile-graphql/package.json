@@ -2,8 +2,12 @@
   "name": "@calico/mobile-graphql",
   "version": "0.0.1",
   "license": "UNLICENSED",
+  "main": "src",
   "scripts": {
     "gqlgen": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.6.6"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",

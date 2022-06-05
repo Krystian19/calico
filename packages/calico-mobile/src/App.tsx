@@ -1,10 +1,4 @@
-import {
-  ApolloClient,
-  ApolloProvider,
-  HttpLink,
-  InMemoryCache,
-  NormalizedCacheObject,
-} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
@@ -12,7 +6,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// Views
+import { NewApolloClient } from './gql';
 import CurrencyListView from './views/CurrencyListView';
 import SettingsView from './views/SettingsView';
 
@@ -42,18 +36,6 @@ export default function App(): JSX.Element {
       </NavigationContainer>
     </ApolloProvider>
   );
-}
-
-function NewApolloClient(): ApolloClient<NormalizedCacheObject> {
-  const link = new HttpLink({
-    uri: 'http://192.168.0.2:4000',
-    credentials: 'same-origin',
-  });
-
-  return new ApolloClient({
-    link,
-    cache: new InMemoryCache(),
-  });
 }
 
 // Views

@@ -9,11 +9,19 @@ export default function CurrencyListView(): JSX.Element {
   });
 
   if (loading) {
-    return <>Loading....</>;
+    return (
+      <View style={styles.container}>
+        <Text>loading...</Text>
+      </View>
+    );
   }
 
   if (error) {
-    return <>Error....</>;
+    return (
+      <View style={styles.container}>
+        <Text>error...</Text>
+      </View>
+    );
   }
 
   console.log('==========================================================');

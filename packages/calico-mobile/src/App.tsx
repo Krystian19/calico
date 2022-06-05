@@ -46,7 +46,7 @@ export default function App(): JSX.Element {
 
 function NewApolloClient(): ApolloClient<NormalizedCacheObject> {
   const link = new HttpLink({
-    uri: 'http://localhost:4000',
+    uri: 'http://192.168.0.2:4000',
     credentials: 'same-origin',
   });
 

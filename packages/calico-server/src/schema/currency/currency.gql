@@ -1,7 +1,7 @@
 type Currency {
   id: Int!
-  name: String
-  code: String
+  name: String!
+  code: String!
 }
 
 type Query {

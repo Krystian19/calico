@@ -8,9 +8,11 @@
     "android": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --android",
     "ios": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --ios",
     "web": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --web",
-    "eject": "EXPO_NO_TYPESCRIPT_SETUP=1 expo eject"
+    "eject": "EXPO_NO_TYPESCRIPT_SETUP=1 expo eject",
+    "gqlgen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.6",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.10",
     "expo": "~45.0.0",
@@ -28,6 +30,11 @@
     "@babel/preset-env": "^7.1.6",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.66.13",
-    "@types/react-native-vector-icons": "^6.4.10"
+    "@types/react-native-vector-icons": "^6.4.10",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/named-operations-object": "^2.2.1",
+    "@graphql-codegen/typescript": "^2.4.11",
+    "@graphql-codegen/typescript-operations": "^2.4.0",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.14"
   }
 }

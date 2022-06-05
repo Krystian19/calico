@@ -1,4 +1,11 @@
 import {
+  ApolloClient,
+  ApolloProvider,
+  HttpLink,
+  InMemoryCache,
+  NormalizedCacheObject,
+} from '@apollo/client';
+import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
@@ -12,25 +19,41 @@ import SettingsView from './views/SettingsView';
 const Tab = createBottomTabNavigator();
 
 export default function App(): JSX.Element {
+  const apolloClient = NewApolloClient();
+
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName={HOME}
-        screenOptions={({ route }): BottomTabNavigationOptions => ({
-          tabBarIcon: ({ focused, color, size }): JSX.Element => (
-            <Ionicons
-              name={getNavbarIcon(route.name, focused)}
-              size={size}
-              color={color}
-            />
-          ),
-        })}
-      >
-        <Tab.Screen name={HOME} component={CurrencyListView} />
-        <Tab.Screen name={SETTINGS} component={SettingsView} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <ApolloProvider client={apolloClient}>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName={HOME}
+          screenOptions={({ route }): BottomTabNavigationOptions => ({
+            tabBarIcon: ({ focused, color, size }): JSX.Element => (
+              <Ionicons
+                name={getNavbarIcon(route.name, focused)}
+                size={size}
+                color={color}
+              />
+            ),
+          })}
+        >
+          <Tab.Screen name={HOME} component={CurrencyListView} />
+          <Tab.Screen name={SETTINGS} component={SettingsView} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </ApolloProvider>
   );
+}
+
+function NewApolloClient(): ApolloClient<NormalizedCacheObject> {
+  const link = new HttpLink({
+    uri: 'http://localhost:4000',
+    credentials: 'same-origin',
+  });
+
+  return new ApolloClient({
+    link,
+    cache: new InMemoryCache(),
+  });
 }
 
 // Views

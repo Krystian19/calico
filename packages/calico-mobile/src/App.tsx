@@ -4,7 +4,7 @@ import {
   HttpLink,
   InMemoryCache,
   NormalizedCacheObject,
-} from '@calico/mobile-graphql';
+} from '@apollo/client';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,

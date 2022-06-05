@@ -8,7 +8,7 @@ import { MOBILE_APP_SERVER_URL } from '@env';
 
 export function NewApolloClient(): ApolloClient<NormalizedCacheObject> {
   const link = new HttpLink({
-    uri: `http://${MOBILE_APP_SERVER_URL}`,
+    uri: MOBILE_APP_SERVER_URL,
     credentials: 'same-origin',
   });
 

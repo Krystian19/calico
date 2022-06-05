@@ -4,6 +4,7 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import { NativeBaseProvider } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { NewApolloClient } from './gql';
@@ -16,25 +17,27 @@ export default function App(): JSX.Element {
   const apolloClient = NewApolloClient();
 
   return (
-    <ApolloProvider client={apolloClient}>
-      <NavigationContainer>
-        <Tab.Navigator
-          initialRouteName={HOME}
-          screenOptions={({ route }): BottomTabNavigationOptions => ({
-            tabBarIcon: ({ focused, color, size }): JSX.Element => (
-              <Ionicons
-                name={getNavbarIcon(route.name, focused)}
-                size={size}
-                color={color}
-              />
-            ),
-          })}
-        >
-          <Tab.Screen name={HOME} component={CurrencyListView} />
-          <Tab.Screen name={SETTINGS} component={SettingsView} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </ApolloProvider>
+    <NativeBaseProvider>
+      <ApolloProvider client={apolloClient}>
+        <NavigationContainer>
+          <Tab.Navigator
+            initialRouteName={HOME}
+            screenOptions={({ route }): BottomTabNavigationOptions => ({
+              tabBarIcon: ({ focused, color, size }): JSX.Element => (
+                <Ionicons
+                  name={getNavbarIcon(route.name, focused)}
+                  size={size}
+                  color={color}
+                />
+              ),
+            })}
+          >
+            <Tab.Screen name={HOME} component={CurrencyListView} />
+            <Tab.Screen name={SETTINGS} component={SettingsView} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </ApolloProvider>
+    </NativeBaseProvider>
   );
 }
 

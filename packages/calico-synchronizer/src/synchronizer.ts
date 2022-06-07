@@ -8,7 +8,9 @@ export default class Synchronizer {
   nexusClient: CoinGecko.default;
 
   constructor() {
-    this.nexusClient = new CoinGecko.default();
+    this.nexusClient = new CoinGecko.default({
+      autoRetry: true,
+    });
   }
 
   async run(): Promise<void> {

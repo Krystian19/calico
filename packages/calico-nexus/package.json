@@ -4,7 +4,8 @@
   "license": "UNLICENSED",
   "main": "src",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "mocha -r ts-node/register 'src/tests/**/*.ts'"
   },
   "dependencies": {
     "coingecko-api-v3": "^0.0.13"

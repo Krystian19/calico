@@ -1,15 +1,13 @@
-import { CoinGeckoClient } from 'coingecko-api-v3';
+import { CoinGeckoClient, Options } from 'coingecko-api-v3';
 
-const SUPPORTED_CURRENCIES = ['bitcoin', 'ethereum', 'monero', 'zcash'];
-const SUPPORTED_FIAT_CURRENCIES = ['usd', 'eur'];
+export const SUPPORTED_CURRENCIES = ['bitcoin', 'ethereum', 'monero', 'zcash'];
+export const SUPPORTED_FIAT_CURRENCIES = ['usd', 'eur'];
 
 export default class GeckoClient {
   client: CoinGeckoClient;
 
-  constructor() {
-    this.client = new CoinGeckoClient({
-      autoRetry: true,
-    });
+  constructor(opts?: Options) {
+    this.client = new CoinGeckoClient(opts);
   }
 
   async ping(): Promise<boolean> {

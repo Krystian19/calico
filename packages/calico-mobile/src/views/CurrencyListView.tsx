@@ -40,8 +40,16 @@ export default function CurrencyListView(): JSX.Element {
 
       <FlatList
         data={currenciesData}
+        width="6/6"
         renderItem={({ item }): JSX.Element => (
-          <Box px={5} py={2} rounded="md" my={2} bg="primary.300">
+          <Box
+            width="6/6"
+            height="10"
+            marginBottom="2"
+            rounded="md"
+            bg="primary.300"
+            textAlign="center"
+          >
             {item.name}
           </Box>
         )}
@@ -53,9 +61,9 @@ export default function CurrencyListView(): JSX.Element {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingLeft: '5px',
+    paddingRight: '5px',
+    paddingTop: '10px',
   },
 });

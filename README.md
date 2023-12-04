@@ -7,3 +7,7 @@ Open source platform for fundamental analysis of digital currencies. We track pr
 ## Getting started
 
 Click [here](./docs/getting_started.md) for instructions on how to setup, and work with the project.
+
+## License
+
+Project is released under the terms of the MIT License.
